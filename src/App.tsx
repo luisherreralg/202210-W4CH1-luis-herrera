@@ -1,20 +1,21 @@
-import { Controls } from "./components/controls";
-import { Header } from "./components/header";
-import { ListGentlemen } from "./components/list.gentlemen";
+import { Gentleman } from "./components/gentleman";
+import { Info } from "./components/info";
 import "./index.css";
+import { data } from "./models/data";
 
 function App() {
-  return (
-    <div className="container">
-      <Header></Header>
-      <Controls></Controls>
-      <main className="main">
-        <ul className="gentlemen">
-          <ListGentlemen></ListGentlemen>
-        </ul>
-      </main>
-    </div>
-  );
+    const dataInfo = [...data];
+
+    return (
+        <div className="container">
+            <Info data={dataInfo}></Info>
+            <main className="main">
+                <ul className="gentlemen">
+                    <Gentleman data={dataInfo}></Gentleman>
+                </ul>
+            </main>
+        </div>
+    );
 }
 
 export default App;
